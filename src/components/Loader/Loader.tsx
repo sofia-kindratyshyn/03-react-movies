@@ -1,5 +1,13 @@
 import css from "../Loader/Loader.module.css"
 
-export default function Loader(){
-    
+interface LoaderProps{
+    loadStatus: boolean
+}
+
+export default function Loader({ loadStatus }: LoaderProps) {
+    return(
+    <>
+        {loadStatus && <p className={css.text}>Loading movies, please wait...</p>}
+        </>
+    )
 }
