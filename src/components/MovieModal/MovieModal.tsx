@@ -27,7 +27,7 @@ useEffect(()=>{
   document.removeEventListener("keydown", handleKeyDown);
   document.body.style.overflow = "";
 }
-})
+},[onClose])
     return createPortal(
     <div className={css.backdrop} role="dialog" aria-modal="true" onClick={handleBackDropClick}>
   <div className={css.modal}>

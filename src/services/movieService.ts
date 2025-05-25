@@ -5,7 +5,7 @@ interface MovieHttpResponce{
     results: Movie[]
 }
 
-export default async function fetchMovies(str: string) {
+export default async function fetchMovies(str: string) : Promise<Movie[]>{
     const responce = await axios.get<MovieHttpResponce>(`https://api.themoviedb.org/3/search/movie?query=${str}`, {
         headers: {
             Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
